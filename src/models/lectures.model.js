@@ -11,6 +11,11 @@ const lectureSchema = new mongoose.Schema({
        ref:"user",
        require:"true"
  }
+},
+{
+    versionKey:false,
+    timestamps:true
+    
 })
 
 const Lecture = mongoose.model("lecture", studentSchema)
