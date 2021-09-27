@@ -29,7 +29,20 @@ const studentSchema = new mongoose.Schema({
  }
 })
 
-const User = mongoose.model("user", userSchema)
+const Student = mongoose.model("student", studentSchema)
+
+//lectures collection
+const lectureSchema = new mongoose.Schema({
+    title: {type: String, required: true},
+    batch: { type:String, required: true},
+   instructor: { 
+       type: mongoose.Schema.Types.ObjectId,
+       ref:"user",
+       require:"true"
+ }
+})
+
+const Lecture = mongoose.model("lecture", studentSchema)
 
 const app = express();
 
